@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Заказать средства по уходу за собой, по приятным ценам. Бесплатная доставка">
+	<meta name="keywords" content="Купить качественную косметику, товары для дома, подарки на праздники">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="fonts/Cuprum/font.css">
+	<link rel="stylesheet" href="fonts/Palanquin/font.css">
+	<link rel="stylesheet" href="fonts/Raleway/font.css">
+	<title>Shopping Kam - home</title>
+</head>
+
+<body>
+
+	<header class="head centerContainer">
+		<a href="./index.html" class="head__logo nonStylesLinkTeg"><img src="./images/home_page/logo.svg" alt="logo"></a>
+
+		<div class="head__nav-menu_menuLiningAdaptive">
+			<nav class="head__nav-menu">
+				<a href="./index.html" class="nonStylesLinkTeg">ГЛАВНАЯ</a>
+				<a href="./catalog.html" class="nonStylesLinkTeg">КАТАЛОГ</a>
+				<a href="./sale.html" class="nonStylesLinkTeg">РАСПРОДАЖА</a>
+				<a href="./stocks.html" class="nonStylesLinkTeg">АКЦИИ</a>
+				<a href="./contacts.html" class="nonStylesLinkTeg">КОНТАКТЫ</a>
+			</nav>
+			<button class="head__nav-menu_btnClose">
+				<div class="head__nav-menu_btnClose-centerLine"></div>
+			</button>
+		</div>
+
+		<div class="head__userFunctions">
+			<a class="head__userFunctions_account nonStylesLinkTeg" href="./registration.html"></a>
+			<a class="head__userFunctions_manual nonStylesLinkTeg" href="#"></a>
+			<div class="head__userFunctions_wrupper-basket">
+				<a class="head__userFunctions_basket basketOtherPage nonStylesLinkTeg" href="./orders.html"></a>
+				<div class="head__userFunctions_countBuy countBuyOtherPage">0</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="catalog centerContainer">
+
+		<div class="catalog__productSelection">
+			<div class="catalog__titleContainer">
+				<h3 class="catalog__title">AVON.RU</h3>
+				<p class="catalog__date">НОЯБРЬ 2024</p>
+			</div>
+			<embed src="./pdf/catalog_11_2024.pdf" type="application/pdf" width="100%" height="550px">
+		</div>
+
+	
+			<form class="catalog__form" action="#" method="post">
+				<div class="catalog__form_description">
+				<label class="formFont">Краткое описание:</label><br>
+				<textarea name="orderDescription" id="orderDescription" cols="30" rows="10"></textarea>
+				</div>
+				<div class="catalog__form_article">
+				<label class="formFont">Артикул:</label><input class="formInputStyle" type="number" name="article" id="orderArticle">
+				</div>
+				<div class="catalog__form_page">
+				<label class="formFont">Страница:</label><input class="formInputStyle" type="number" name="page" id="orderPage">
+				</div>
+				<div class="catalog__form_quantity">
+				<label class="formFont">Количество:</label><input class="formInputStyle" type="number" name="quantity" id="orderQuantity">
+				</div>
+			
+				<button class="catalog__form_orderButton" type="submit">ДОБАВИТЬ В КОРЗИНУ</button>
+			</form>
+
+	</section>
+
+
+	<section class="subscribe centerContainer">
+		<div class="subscribe__contentContainer">
+			<h2 class="subscribe__title">Подпишитесь</h2>
+			<div class="subscribe__subtitle">На нашу рассылку, чтобы первыми узнавать о новинках,
+				акциях, мероприятиях и всегда быть в курсе событий
+			</div>
+			<form class="subscribe__form" action="#" method="post">
+				<input class="subscribe__input" type="email" placeholder="Ваш Email">
+				<button class="subscribe__btnSubmit" type="submit">ПОДПИСАТЬСЯ</button>
+			</form>
+		</div>
+	</section>
+
+	<footer class="footer centerContainer">
+
+		<a href="./index.html" class="nonStylesLinkTeg"><img class="footer__logo" src="./images/home_page/logo.svg" alt="logo"></a>
+		<div class="footer__menuWrupper">
+			<div class="footer__navMenu">
+				<a class="footer__linkPage nonStylesLinkTeg" href="./index.html">ГЛАВНАЯ</a>
+				<a class="footer__linkPage nonStylesLinkTeg" href="./catalog.html">КАТАЛОГ</a>
+				<a class="footer__linkPage nonStylesLinkTeg" href="./sale.html">РАСПРОДАЖА</a>
+				<a class="footer__linkPage nonStylesLinkTeg" href="./stocks.html">АКЦИИ</a>
+				<a class="footer__linkPage nonStylesLinkTeg" href="./contacts.html">КОНТАКТЫ</a>
+			</div>
+			<p class="footer__author">&copy; 2024 shopping kam</p>
+		</div>
+
+		<div class="footer__additionInfo">
+			<div class="footer__additionInfo_social">
+				<a href="#" class="nonStylesLinkTeg"><img src="./images/home_page/instagram.svg" alt="instagram" class="footer__socialImage"></a>
+				<a href="https://vk.com/" class="nonStylesLinkTeg"><img src="./images/home_page/vkontakte.svg" alt="vkontakte"
+						class="footer__socialImage"></a>
+				<a href="#" class="nonStylesLinkTeg"><img src="./images/home_page/whatsapp.svg" alt="whatsapp" class="footer__socialImage"></a>
+			</div>
+			<p class="footer__additionInfo_email">Email: dvornikov.dmitry034@gmail.com</p>
+		</div>
+	</footer>
+
+	<script src=""></script>
+</body>
+
+</html>

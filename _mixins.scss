@@ -1,0 +1,15 @@
+@mixin titleFont() {
+	font-family: 'cuprumregular';
+	font-weight: normal;
+  font-style: normal;
+}
+@mixin subtitleFont() {
+	font-family: 'ralewaythin';
+	font-weight: normal;
+  font-style: normal;
+}
+@mixin descriptionFont() {
+	font-family: 'palanquinregular';
+	font-weight: normal;
+  font-style: normal;
+}

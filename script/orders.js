@@ -40,5 +40,3 @@ dataBasket.forEach(data => {
 </div>
 	`);
 });
-
-//Стили для кнопок поменять

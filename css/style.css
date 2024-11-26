@@ -968,6 +968,20 @@ body {
   cursor: pointer;
   opacity: 0.8;
 }
+.orders__defaultOrderBlock {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #b6b6b6;
+  height: 300px;
+  color: #b6b6b6;
+}
+.orders__defaultOrderBlock p {
+  font-size: 1.5rem;
+  font-family: "ralewaythin";
+  font-weight: normal;
+  font-style: normal;
+}
 
 .account {
   display: flex;

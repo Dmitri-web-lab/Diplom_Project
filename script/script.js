@@ -91,7 +91,7 @@ dataProduct.forEach(data => {
 		<div class="slider__cardProduct backgroundOfferCenter" style="background-image: url(${data.backgroundImage});" id="${data.id}">
 			<div class="slider__cardContent ${data.classSpecialOffer}">
 				<h1 class="slider__cardContent_title">${data.description}</h1>
-				<a href="./catalog.html" class="slider__cardButton">ПЕРЕЙТИ К КАТАЛОГУ</a>
+				<a href="./catalog.html" class="slider__cardButton nonStylesLinkTeg">ПЕРЕЙТИ К КАТАЛОГУ</a>
 			</div>
 		</div>
 	`);
@@ -101,7 +101,7 @@ dataProduct.forEach(data => {
 			<div class="slider__cardContent">
 				<img src="${data.specialOfferImage}" class="${data.classOfferImage}" alt="Специальное предложение">
 				<h3 class="slider__cardContent_title">${data.description}</h3>
-				<a href="./catalog.html" class="slider__cardButton">ПЕРЕЙТИ К КАТАЛОГУ</a>
+				<a href="./catalog.html" class="slider__cardButton nonStylesLinkTeg">ПЕРЕЙТИ К КАТАЛОГУ</a>
 			</div>
 		</div>
 	`);

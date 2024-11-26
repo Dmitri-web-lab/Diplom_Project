@@ -1050,7 +1050,19 @@ body {
 		cursor: pointer;
 		opacity: 0.8;
 	}
+	&__defaultOrderBlock {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		border: 1px dashed #b6b6b6;
+		height: 300px;
+		color: #b6b6b6;
 
+	}
+	&__defaultOrderBlock p {
+		font-size: 1.5rem;
+		@include subtitleFont();
+	}
 }
 
 .account {

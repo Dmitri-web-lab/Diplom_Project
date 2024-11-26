@@ -55,19 +55,19 @@
 			<form class="catalog__form" action="#" method="post">
 				<div class="catalog__form_description">
 				<label class="formFont">Краткое описание:</label><br>
-				<textarea name="orderDescription" id="orderDescription" cols="30" rows="10"></textarea>
+				<textarea id="orderDescription" cols="30" rows="10"></textarea>
 				</div>
 				<div class="catalog__form_article">
-				<label class="formFont">Артикул:</label><input class="formInputStyle" type="number" name="article" id="orderArticle">
+				<label class="formFont">Артикул:</label><input class="formInputStyle" type="number" id="orderArticle">
 				</div>
 				<div class="catalog__form_page">
-				<label class="formFont">Страница:</label><input class="formInputStyle" type="number" name="page" id="orderPage">
+				<label class="formFont">Страница:</label><input class="formInputStyle" type="number" id="orderPage">
 				</div>
 				<div class="catalog__form_quantity">
-				<label class="formFont">Количество:</label><input class="formInputStyle" type="number" name="quantity" id="orderQuantity">
+				<label class="formFont">Количество:</label><input class="formInputStyle" type="number" id="orderQuantity">
 				</div>
 			
-				<button class="catalog__form_orderButton" type="submit">ДОБАВИТЬ В КОРЗИНУ</button>
+				<button class="catalog__form_orderButton" id="addBasketCatalogPage" type="button">ДОБАВИТЬ В КОРЗИНУ</button>
 			</form>
 
 	</section>
@@ -111,7 +111,7 @@
 		</div>
 	</footer>
 
-	<script src=""></script>
+	<script src="./script/catalog.js"></script>
 </body>
 
 </html>

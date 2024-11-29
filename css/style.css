@@ -487,89 +487,105 @@ body {
 /* Стили инструкции по заказам */
 .manual {
   display: flex;
-  width: 100%;
   align-items: center;
   flex-direction: column;
   margin-top: 135px;
+  width: 100vw;
 }
 .manual__title {
-  font-size: 1.5rem;
+  font-size: 1.85rem;
   font-family: "cuprumregular";
   font-weight: normal;
   font-style: normal;
-  margin-bottom: 87px;
+  margin-bottom: 75px;
 }
 .manual__descriptionContainer {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: 2.9vw;
+  align-items: center;
+  width: 81vw;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  border-radius: 30px;
+  background-image: linear-gradient(90deg, #fed7bf, #e6b597);
+}
+.manual__translucentBackground {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  color: #71472e;
+  padding-top: 50px;
+  padding-bottom: 29px;
+  background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(231, 231, 231, 0.15));
+  width: 72vw;
 }
 .manual__cardDescription {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
-  text-align: center;
-  background: linear-gradient(150deg, #fc5a7a, #8c0520);
-  border-radius: 27px;
-  width: 362px;
-  height: 370px;
-  gap: 48px;
-  position: relative;
-  padding-left: 16px;
+  margin-left: 1.5vw;
 }
 .manual__sequenceNumber {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #fff;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  position: absolute;
-  top: 12px;
-  left: 11px;
-}
-.manual__description {
-  width: 326px;
   color: #fff;
+  border: 1px solid #fff;
+  margin-right: 3vw;
+  font-size: 1.5rem;
   font-family: "palanquinregular";
   font-weight: normal;
   font-style: normal;
+  font-weight: 800;
 }
-.manual__arrow {
-  width: 202px;
+.manual__image {
+  width: 142px;
+  height: 142px;
 }
-.manual__arrow_verticalPosition {
-  transform: rotate(90deg);
-  position: relative;
-  top: 0px;
-  left: 24vw;
+.manual__description {
+  margin-left: 4.4vw;
+  font-family: "palanquinregular";
+  font-weight: normal;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
-.manual__arrow_rotateBack {
-  transform: rotate(180deg);
-}
-.manual__arrow_verticalPositionLeft {
-  transform: rotate(90deg);
-  position: relative;
-  top: 0px;
-  right: 24vw;
-}
-.manual__arrowIntermediate {
+.manual__cardCompleted {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 242px;
-  width: 100%;
+  width: 31.8vw;
+  margin-left: 20.5vw;
+  margin-top: 24px;
+  height: 111px;
+  text-align: center;
+  border-radius: 27px;
+  color: #fff;
+  font-weight: bold;
+  background-image: linear-gradient(140deg, #deaf91, #d49b78);
 }
 .manual__completed {
-  font-size: 2.25rem;
+  font-size: 1.8rem;
   font-family: "cuprumregular";
   font-weight: normal;
   font-style: normal;
-  color: #fff;
-  font-weight: bold;
+}
+.manual__descriptionCompleted {
+  font-family: "palanquinregular";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+.manual__arrowDown {
+  width: 30px;
+  margin-left: calc(50% - 15px);
 }
 
 /* Стили блока подписки */
@@ -1217,14 +1233,19 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .slider__cardContent {
     padding-top: 30px;
+    margin-left: 14vw;
+  }
+  .slider__cardContent_title {
+    font-size: 1.5rem;
   }
   .slider__cardProduct {
     height: 380px;
   }
   .slider__cardButton {
-    padding: 21px 30px;
-    border-radius: 16px;
-    letter-spacing: 2px;
+    padding: 18px;
+    border-radius: 24px;
+    letter-spacing: 3px;
+    font-size: 0.6rem;
   }
   .slider__inputsContainer {
     margin-top: 20px;
@@ -1236,6 +1257,13 @@ input[type=number]::-webkit-outer-spin-button {
   .slider__inputDeactive {
     width: 16px;
     height: 16px;
+  }
+}
+/* Дополнительно на контент слайдера */
+@media (max-width: 530px) {
+  .slider__cardContent {
+    margin-left: 29vw;
+    color: #fff;
   }
 }
 /* Адаптив на мобильный *//*# sourceMappingURL=style.css.map */

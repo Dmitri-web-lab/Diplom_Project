@@ -28,6 +28,7 @@ body {
 	margin-left: 9.5vw;
 	width: 81vw;
 }
+
 .nonStylesLinkTeg {
 	text-decoration: none;
 	color: #000;
@@ -531,95 +532,111 @@ body {
 /* Стили инструкции по заказам */
 .manual {
 	display: flex;
-	width: 100%;
 	align-items: center;
 	flex-direction: column;
 	margin-top: 135px;
+	width: 100vw;
 
 	&__title {
-		font-size: 1.5rem;
+		font-size: 1.85rem;
 		@include titleFont();
-		margin-bottom: 87px;
+		margin-bottom: 75px;
 	}
 
 	&__descriptionContainer {
 		display: flex;
+		flex-direction: column;
 		flex-wrap: wrap;
-		gap: 2.9vw;
+		align-items: center;
+		width: 81vw;
+		padding-top: 45px;
+		padding-bottom: 45px;
+
+		border-radius: 30px;
+		background-image: linear-gradient(90deg, #fed7bf, #e6b597);
+
+	}
+
+	&__translucentBackground {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		border: 1px solid #fff;
+		border-radius: 30px;
+		color: #71472e;
+		padding-top: 50px;
+		padding-bottom: 29px;
+		background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(231, 231, 231, 0.15));
+		width: 72vw;
 
 	}
 
 	&__cardDescription {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
-		flex-direction: column;
-		text-align: center;
-		background: linear-gradient(150deg, #fc5a7a, #8c0520);
-		border-radius: 27px;
-		width: 362px;
-		height: 370px;
-		gap: 48px;
-		position: relative;
-		padding-left: 16px;
+		margin-left: 1.5vw;
 	}
 
 	&__sequenceNumber {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		color: #fff;
-		width: 40px;
-		height: 40px;
-		border: 2px solid #fff;
+		width: 52px;
+		height: 52px;
 		border-radius: 50%;
-		position: absolute;
-		top: 12px;
-		left: 11px;
+		color: #fff;
+		border: 1px solid #fff;
+		margin-right: 3vw;
+		font-size: 1.5rem;
+		@include descriptionFont();
+		font-weight: 800;
+	}
+
+	&__image {
+		width: 142px;
+		height: 142px;
+
 	}
 
 	&__description {
-		width: 326px;
-		color: #fff;
+		margin-left: 4.4vw;
 		@include descriptionFont();
+		font-weight: bold;
+		font-size: 1.5rem;
 	}
 
-	&__arrow {
-		width: 202px;
-
-		&_verticalPosition {
-			transform: rotate(90deg);
-			position: relative;
-			top: 0px;
-			left: 24vw;
-		}
-
-		&_rotateBack {
-			transform: rotate(180deg);
-		}
-
-		&_verticalPositionLeft {
-			transform: rotate(90deg);
-			position: relative;
-			top: 0px;
-			right: 24vw;
-		}
-	}
-
-	&__arrowIntermediate {
+	&__cardCompleted {
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
 		align-items: center;
-		height: 242px;
-		width: 100%;
+		width: 31.8vw;
+		margin-left: 20.5vw;
+		margin-top: 24px;
+		height: 111px;
 
+		text-align: center;
+		border-radius: 27px;
+		color: #fff;
+		font-weight: bold;
+		background-image: linear-gradient(140deg, #deaf91, #d49b78);
 	}
 
 	&__completed {
-		font-size: 2.25rem;
+		font-size: 1.8rem;
 		@include titleFont();
-		color: #fff;
-		font-weight: bold;
+
+	}
+
+	&__descriptionCompleted {
+		@include descriptionFont();
+		font-size: 1.25rem;
+		line-height: 1.6;
+	}
+
+	&__arrowDown {
+		width: 30px;
+		margin-left: calc(50% - 15px);
 	}
 }
 
@@ -989,6 +1006,7 @@ body {
 		border: 1px solid $colorSelectSite;
 		cursor: pointer;
 	}
+
 	&__priceContainer {
 		display: flex;
 		gap: 2px;
@@ -1000,6 +1018,7 @@ body {
 		width: 6px;
 		height: 12px;
 	}
+
 	&__deleteProduct {
 		width: 26px;
 		height: 26px;
@@ -1050,6 +1069,7 @@ body {
 		cursor: pointer;
 		opacity: 0.8;
 	}
+
 	&__defaultOrderBlock {
 		display: none;
 		align-items: center;
@@ -1059,6 +1079,7 @@ body {
 		color: #b6b6b6;
 
 	}
+
 	&__defaultOrderBlock p {
 		font-size: 1.5rem;
 		@include subtitleFont();
@@ -1079,20 +1100,23 @@ body {
 		@include titleFont();
 		font-weight: 700;
 	}
+
 	&__selectionLine {
 		display: flex;
 		gap: 9px;
 		position: relative;
 
-			&_entrance {
+		&_entrance {
 			border-top: none;
 			border-left: none;
 			border-right: none;
 			border-bottom: 1px solid #000;
 			padding-bottom: 10px;
 			@include subtitleFont();
-			background: none;;
+			background: none;
+			;
 		}
+
 		&_registration {
 			@include subtitleFont();
 			border-top: none;
@@ -1103,11 +1127,14 @@ body {
 			padding-bottom: 10px;
 
 		}
-		&_entrance:hover, &_registration:hover {
+
+		&_entrance:hover,
+		&_registration:hover {
 			cursor: pointer;
 			opacity: 0.8;
 		}
 	}
+
 	&__selectionLine:after {
 		display: block;
 		content: '';
@@ -1117,6 +1144,7 @@ body {
 		position: absolute;
 		top: 28px;
 	}
+
 	&__form {
 		display: flex;
 		flex-direction: column;
@@ -1128,22 +1156,27 @@ body {
 			border: 1px solid $colorSelectSite;
 			border-radius: 15px;
 		}
+
 		&_password {
 			width: 33vw;
 			height: 56px;
 			border: 1px solid $colorSelectSite;
 			border-radius: 15px;
 		}
-		&_email::placeholder, &_password::placeholder {
+
+		&_email::placeholder,
+		&_password::placeholder {
 			@include descriptionFont();
 			color: #adadad;
 			font-size: 0.8rem;
 			padding-left: 29px;
 		}
 	}
+
 	&__forgotPassword {
 		color: #000;
 	}
+
 	&__buttonEntrance {
 		width: 194px;
 		height: 65px;
@@ -1293,7 +1326,6 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 
 	.slider {
-
 		&__imageNew {
 			width: 185px;
 			height: 50px;
@@ -1315,6 +1347,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 		&__cardContent {
 			padding-top: 30px;
+			margin-left: 14vw;
+
+			&_title {
+				font-size: 1.5rem;
+			}
 		}
 
 		&__cardProduct {
@@ -1322,9 +1359,10 @@ input[type=number]::-webkit-outer-spin-button {
 		}
 
 		&__cardButton {
-			padding: 21px 30px;
-			border-radius: 16px;
-			letter-spacing: 2px;
+			padding: 18px;
+			border-radius: 24px;
+			letter-spacing: 3px;
+			font-size: 0.6rem;
 		}
 
 		&__inputsContainer {
@@ -1342,6 +1380,18 @@ input[type=number]::-webkit-outer-spin-button {
 		}
 	}
 
+}
+
+/* Дополнительно на контент слайдера */
+@media (max-width: 530px) {
+	.slider {
+
+		&__cardContent {
+			margin-left: 29vw;
+			color: #fff;
+		}
+
+	}
 }
 
 /* Адаптив на мобильный */

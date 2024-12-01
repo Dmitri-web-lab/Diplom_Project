@@ -684,7 +684,9 @@ body {
 	}
 
 	&__input {
-		width: 400px;
+		max-width: 400px;
+		min-width: 260px;
+		width: 29.3vw;
 		height: 45px;
 		border-radius: 24px;
 		border: 1px solid $colorSelectSite;
@@ -872,6 +874,26 @@ body {
 		&_orderButton:hover {
 			cursor: pointer;
 			opacity: 0.8;
+		}
+
+		&_orderButtonClose {
+			transition: all 0.2s ease;
+		}
+		&_orderButtonCloseActive {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: $colorSelectSite;
+			background-image: url("../images/image_catalogPage_button/buttonListCreateOrder.svg");
+			background-position: center;
+			background-size: contain;
+			border: none;
+		}
+		&_orderButtonClose:hover {
+			background-color: #000;
 		}
 	}
 }
@@ -1372,12 +1394,58 @@ input[type=number]::-webkit-outer-spin-button {
 		}
 	}
 
+	/* Адаптив каталога */
+	.catalog {
+		justify-content: center;
+		gap: 0;
+
+		&__productSelection {
+			width: 100%;
+		}
+
+		&__form {
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100vw;
+			margin-top: 0;
+			background-color: #fff;
+			border: 1px dashed $colorSelectSite;
+			padding: 10px;
+			z-index: 500;
+
+			&_orderButton {
+				padding: 8px 26px;
+				height: 51px;
+				font-size: 0.8rem;
+			}
+
+			&_orderButtonClose {
+				position: absolute;
+				right: 0px;
+				height: 100%;
+				width: 38px;
+				background-color: #bababa;
+				color: #fff;
+				border: none;
+			}
+		}
+	}
+
 	/* Адаптив подписки */
 	.subscribe {
 		margin-top: 16vw;
 
 		&__contentContainer {
 			width: 100%;
+		}
+
+		&__subtitle {
+			padding-left: 3vw;
+			padding-right: 3vw;
 		}
 	}
 
@@ -1529,6 +1597,32 @@ input[type=number]::-webkit-outer-spin-button {
 		width: 14px;
 		height: 14px;
 	}
+
+	.catalog {
+		&__form {
+			&_orderButton {
+				height: 36px;
+			}
+		}
+	}
+
+	.footer {
+		&__logo {
+			margin-right: 4.8vw;
+			width: 42px;
+			height: 41px;
+		}
+
+		&__menuWrupper {
+			justify-content: flex-start;
+			padding-left: 13.5vw;
+		}
+
+		&__additionInfo {
+			margin-left: 12.3vw;
+		}
+
+	}
 }
 
 /* Дополнительно на контент слайдера */
@@ -1625,4 +1719,46 @@ input[type=number]::-webkit-outer-spin-button {
 		}
 	}
 
+	.footer {
+		background-color: #c0c0c0;
+		flex-direction: column;
+		height: 265px;
+
+		&__logo {
+			display: none;
+		}
+
+		&__menuWrupper {
+			padding-left: 0;
+			border: none;
+			height: 140px;
+		}
+
+		&__navMenu {
+			gap: 10px;
+		}
+
+		&__linkPage {
+			font-size: 1rem;
+		}
+
+		&__additionInfo {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-left: 0;
+
+			&_social {
+				gap: 1.65vw;
+			}
+
+			&_email {
+				font-size: 0.8rem;
+			}
+		}
+
+		&__author {
+			margin-top: 5px;
+		}
+	}
 }

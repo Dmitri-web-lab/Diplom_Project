@@ -633,7 +633,9 @@ body {
   gap: 30px;
 }
 .subscribe__input {
-  width: 400px;
+  max-width: 400px;
+  min-width: 260px;
+  width: 29.3vw;
   height: 45px;
   border-radius: 24px;
   border: 1px solid #FB3A61;
@@ -810,6 +812,25 @@ body {
 .catalog__form_orderButton:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+.catalog__form_orderButtonClose {
+  transition: all 0.2s ease;
+}
+.catalog__form_orderButtonCloseActive {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FB3A61;
+  background-image: url("../images/image_catalogPage_button/buttonListCreateOrder.svg");
+  background-position: center;
+  background-size: contain;
+  border: none;
+}
+.catalog__form_orderButtonClose:hover {
+  background-color: #000;
 }
 
 .formFont {
@@ -1251,12 +1272,52 @@ input[type=number]::-webkit-outer-spin-button {
     width: 1.9vw;
     margin-left: 49%;
   }
+  /* Адаптив каталога */
+  .catalog {
+    justify-content: center;
+    gap: 0;
+  }
+  .catalog__productSelection {
+    width: 100%;
+  }
+  .catalog__form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    margin-top: 0;
+    background-color: #fff;
+    border: 1px dashed #FB3A61;
+    padding: 10px;
+    z-index: 500;
+  }
+  .catalog__form_orderButton {
+    padding: 8px 26px;
+    height: 51px;
+    font-size: 0.8rem;
+  }
+  .catalog__form_orderButtonClose {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 38px;
+    background-color: #bababa;
+    color: #fff;
+    border: none;
+  }
   /* Адаптив подписки */
   .subscribe {
     margin-top: 16vw;
   }
   .subscribe__contentContainer {
     width: 100%;
+  }
+  .subscribe__subtitle {
+    padding-left: 3vw;
+    padding-right: 3vw;
   }
   .footer__logo {
     margin-right: 6.8vw;
@@ -1367,6 +1428,21 @@ input[type=number]::-webkit-outer-spin-button {
     width: 14px;
     height: 14px;
   }
+  .catalog__form_orderButton {
+    height: 36px;
+  }
+  .footer__logo {
+    margin-right: 4.8vw;
+    width: 42px;
+    height: 41px;
+  }
+  .footer__menuWrupper {
+    justify-content: flex-start;
+    padding-left: 13.5vw;
+  }
+  .footer__additionInfo {
+    margin-left: 12.3vw;
+  }
 }
 /* Дополнительно на контент слайдера */
 @media (max-width: 530px) {
@@ -1428,5 +1504,39 @@ input[type=number]::-webkit-outer-spin-button {
   .manual__descriptionContainer {
     padding-top: 4vw;
     padding-bottom: 4vw;
+  }
+  .footer {
+    background-color: #c0c0c0;
+    flex-direction: column;
+    height: 265px;
+  }
+  .footer__logo {
+    display: none;
+  }
+  .footer__menuWrupper {
+    padding-left: 0;
+    border: none;
+    height: 140px;
+  }
+  .footer__navMenu {
+    gap: 10px;
+  }
+  .footer__linkPage {
+    font-size: 1rem;
+  }
+  .footer__additionInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+  .footer__additionInfo_social {
+    gap: 1.65vw;
+  }
+  .footer__additionInfo_email {
+    font-size: 0.8rem;
+  }
+  .footer__author {
+    margin-top: 5px;
   }
 }/*# sourceMappingURL=style.css.map */

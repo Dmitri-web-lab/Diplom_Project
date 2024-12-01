@@ -254,6 +254,7 @@ body {
 		position: relative;
 		top: 90px;
 		left: 15%;
+
 	}
 
 	&__switchingArrowLeft {
@@ -292,6 +293,7 @@ body {
 		top: 47px;
 		color: #fff;
 		transition: all 0.2s ease;
+		@include descriptionFont();
 	}
 
 	&__cardButton:hover {
@@ -540,7 +542,7 @@ body {
 	&__title {
 		font-size: 1.85rem;
 		@include titleFont();
-		margin-bottom: 75px;
+		margin-bottom: 5.5vw;
 	}
 
 	&__descriptionContainer {
@@ -581,7 +583,7 @@ body {
 	&__sequenceNumber {
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		padding-top: 0.7vw;
 		width: 52px;
 		height: 52px;
 		border-radius: 50%;
@@ -589,7 +591,7 @@ body {
 		border: 1px solid #fff;
 		margin-right: 3vw;
 		font-size: 1.5rem;
-		@include descriptionFont();
+		@include subtitleFont();
 		font-weight: 800;
 	}
 
@@ -610,8 +612,9 @@ body {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 31.8vw;
-		margin-left: 20.5vw;
+		justify-content: center;
+		width: 40vw;
+		margin-left: 16.5vw;
 		margin-top: 24px;
 		height: 111px;
 
@@ -765,7 +768,6 @@ body {
 	}
 
 	&__author {
-		margin-top: 19px;
 		font-size: 0.75rem;
 		@include descriptionFont();
 	}
@@ -1311,7 +1313,93 @@ input[type=number]::-webkit-outer-spin-button {
 				line-height: 38px;
 			}
 		}
+
+		&__cardButton {
+			font-size: 0.8rem;
+			font-weight: 500;
+		}
 	}
+
+
+	/* Адаптив распродажи */
+	.discounted {
+		&__moreContainer {
+			padding-left: 3.3vw;
+		}
+
+		&__cardContainer,
+		&__cardContainerStock {
+			justify-content: flex-start;
+			padding-left: 16%;
+		}
+
+	}
+
+	/* Адаптив инструкции */
+	.manual {
+		margin-top: 100px;
+
+		&__title {
+			font-size: 1.5rem;
+		}
+
+		&__sequenceNumber {
+			width: 4vw;
+			height: 4vw;
+			font-size: 1.2rem;
+		}
+
+		&__image {
+			width: 8.8vw;
+			height: 8.8vw;
+		}
+
+		&__description {
+			font-size: 1rem;
+		}
+
+		&__completed {
+			font-size: 1.4rem;
+		}
+
+		&__descriptionCompleted {
+			font-size: 1rem;
+		}
+
+		&__arrowDown {
+			width: 1.9vw;
+			margin-left: 49%;
+		}
+	}
+
+	/* Адаптив подписки */
+	.subscribe {
+		margin-top: 16vw;
+
+		&__contentContainer {
+			width: 100%;
+		}
+	}
+
+	.footer {
+		&__logo {
+			margin-right: 6.8vw;
+		}
+
+		&__menuWrupper {
+			justify-content: flex-start;
+			padding-left: 22.5vw;
+		}
+
+		&__additionInfo {
+			margin-left: 16.3vw;
+		}
+
+		&__navMenu {
+			flex-direction: column;
+		}
+	}
+
 }
 
 /* Дополнительный адаптив слайдера */
@@ -1321,7 +1409,7 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 
 	.sliderWrupper {
-		height: 600px;
+		height: 466px;
 		margin-top: 32px;
 	}
 
@@ -1343,6 +1431,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 		&__contentCenter {
 			top: 58px;
+			left: 10%;
 		}
 
 		&__cardContent {
@@ -1362,7 +1451,8 @@ input[type=number]::-webkit-outer-spin-button {
 			padding: 18px;
 			border-radius: 24px;
 			letter-spacing: 3px;
-			font-size: 0.6rem;
+			font-size: 0.8rem;
+			font-weight: 500;
 		}
 
 		&__inputsContainer {
@@ -1380,6 +1470,65 @@ input[type=number]::-webkit-outer-spin-button {
 		}
 	}
 
+
+	/* Дополнительный адаптив распродажи */
+	.discounted {
+		margin-top: 40px;
+
+		&__cardContainer,
+		&__cardContainerStock {
+			font-size: 1rem;
+		}
+
+		&__moreContainer {
+			padding-bottom: 12px;
+		}
+
+		&__watchMore {
+			width: 35px;
+			height: 35px;
+		}
+
+		&__card {
+			width: 205px;
+		}
+
+		&__photoProduct {
+
+			&_favourites {
+				width: 26px;
+				height: 26px;
+			}
+
+			&_stock {
+				width: 35px;
+				height: 35px;
+			}
+		}
+
+		&__cardArticul b {
+			font-size: 1rem;
+		}
+
+		&__addBasket {
+			width: 188px;
+			height: 47px;
+		}
+	}
+
+	.oldPrice:after {
+		width: 48px;
+		top: 9px;
+	}
+
+	.currency {
+		height: 15px;
+	}
+
+	.currencyGrey {
+		width: 14px;
+		height: 14px;
+	}
 }
 
 /* Дополнительно на контент слайдера */
@@ -1391,8 +1540,89 @@ input[type=number]::-webkit-outer-spin-button {
 			color: #fff;
 		}
 
+		&__cardContent_title {
+			line-height: 28px;
+		}
+
+		&__contentCenter {
+			color: #000;
+			margin-left: 10vw;
+		}
 	}
+
+
+	/* Дополнительный адаптив инструкции */
+	.manual {
+
+
+		&__title {
+			font-size: 1.2rem;
+		}
+
+		&__sequenceNumber {
+			font-size: 0.9rem;
+		}
+
+		&__description {
+			font-size: 0.8rem;
+		}
+
+		&.manual__cardCompleted {
+			height: 90px;
+		}
+
+		&__completed {
+			font-size: 1.1rem;
+		}
+
+		&__descriptionCompleted {
+			font-size: 0.8rem;
+		}
+
+	}
+
+	/* Дополнительный адаптив подписки */
+	.subscribe {
+		background-position: right;
+
+		&__contentContainer {
+			gap: 3vw;
+			padding-top: 55vw;
+		}
+
+		&__btnSubmit {
+			font-size: 1rem;
+		}
+	}
+
 }
 
 /* Адаптив на мобильный */
-@media (min-width: 375px) and (max-width: 425px) {}
+@media (min-width: 375px) and (max-width: 425px) {
+	.head {
+		&__userFunctions {
+			gap: 1.65vw;
+		}
+	}
+
+	.slider {
+		&__cardButton {
+			padding: 10px;
+			border-radius: 15px;
+		}
+
+	}
+
+	.manual {
+		&__translucentBackground {
+			padding-top: 4.46vw;
+			padding-bottom: 4.1vw;
+		}
+
+		&__descriptionContainer {
+			padding-top: 4vw;
+			padding-bottom: 4vw;
+		}
+	}
+
+}

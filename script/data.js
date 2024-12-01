@@ -1,19 +1,19 @@
 // Данные о спецпредложениях
 const dataProduct = [{
 	id: 1,
-	backgroundImage: "../images/images_slider/one_backCard.png",
-	specialOfferImage: "../images/images_slider/hitProduct.png",
+	backgroundImage: "./images/images_slider/one_backCard.png",
+	specialOfferImage: "./images/images_slider/hitProduct.png",
 	classOfferImage: "slider__imageHit",
 	description: "Мерцающая помада увлажняет благодаря маслам авокадо, кунжута и витамину Е, а 3D-пигменты дарят сияние!"
 }, {
 	id: 2,
-	backgroundImage: "../images/images_slider/two_backCard.png",
-	specialOfferImage: "../images/images_slider/newProduct.png",
+	backgroundImage: "./images/images_slider/two_backCard.png",
+	specialOfferImage: "./images/images_slider/newProduct.png",
 	classOfferImage: "slider__imageNew",
 	description: "Новое поступление ароматов imary black. Количество ограничено!"
 }, {
 	id: 3,
-	backgroundImage: "../images/images_slider/three_backCard.png",
+	backgroundImage: "./images/images_slider/three_backCard.png",
 	specialOfferImage: "",
 	classSpecialOffer: "slider__contentCenter",
 	description: "Осенние скидки до 30% и специальные предложения на средства по уходу за кожей"
@@ -24,7 +24,7 @@ const dataSale = [
 	{
 		id: 1,
 		widthImage: 200,
-		photoProduct: "../images/discounted_products/todayTomorrow.png",
+		photoProduct: "./images/discounted_products/todayTomorrow.png",
 		title: "Today Tomorrow",
 		subtitle: "Парфюмерная вода для нее, 50 мл",
 		articul: 123456,
@@ -34,7 +34,7 @@ const dataSale = [
 	{
 		id: 2,
 		widthImage: 101.3,
-		photoProduct: "../images/discounted_products/coffeeMask.png",
+		photoProduct: "./images/discounted_products/coffeeMask.png",
 		title: "Cofee Mask",
 		subtitle: "Питательная маска с богатыми маслами, 75 мл",
 		articul: 789125,
@@ -44,7 +44,7 @@ const dataSale = [
 	{
 		id: 2,
 		widthImage: 101.3,
-		photoProduct: "../images/discounted_products/coffeeMask.png",
+		photoProduct: "./images/discounted_products/coffeeMask.png",
 		title: "Cofee Mask",
 		subtitle: "Питательная маска с богатыми маслами, 75 мл",
 		articul: 789125,
@@ -59,7 +59,7 @@ const dataStock = [
 		id: 2,
 		widthImage: 101.3,
 		stock: 15,
-		photoProduct: "../images/discounted_products/coffeeMask.png",
+		photoProduct: "./images/discounted_products/coffeeMask.png",
 		title: "Cofee Mask",
 		subtitle: "Питательная маска с богатыми маслами, 75 мл",
 		articul: 789125,
@@ -70,7 +70,7 @@ const dataStock = [
 		id: 2,
 		widthImage: 101.3,
 		stock: 15,
-		photoProduct: "../images/discounted_products/coffeeMask.png",
+		photoProduct: "./images/discounted_products/coffeeMask.png",
 		title: "Cofee Mask",
 		subtitle: "Питательная маска с богатыми маслами, 75 мл",
 		articul: 789125,
@@ -81,7 +81,7 @@ const dataStock = [
 		id: 2,
 		widthImage: 101.3,
 		stock: 15,
-		photoProduct: "../images/discounted_products/coffeeMask.png",
+		photoProduct: "./images/discounted_products/coffeeMask.png",
 		title: "Cofee Mask",
 		subtitle: "Питательная маска с богатыми маслами, 75 мл",
 		articul: 789125,

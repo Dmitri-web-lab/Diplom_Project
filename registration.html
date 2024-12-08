@@ -42,22 +42,124 @@
 		</div>
 	</header>
 
-<section class="account">
-	<div class="account__title">Вход</div>
-	<div class="account__selectionLine">
-		<button class="account__selectionLine_entrance">ВХОД</button>
-		<div class="account__slash"> / </div>
-		<button class="account__selectionLine_registration">РЕГИСТРАЦИЯ</button>
-	</div>
-		<form class="account__form" action="#">
+	<section class="account registration">
+		<div class="account__title">Вход</div>
+		<div class="account__selectionLine">
+			<button class="account__selectionLine_entrance">ВХОД</button>
+			<div class="account__slash"> / </div>
+			<button class="account__selectionLine_registration">РЕГИСТРАЦИЯ</button>
+		</div>
+
+		<form class="account__form switchedFormEntrance" action="#">
 			<input class="account__form_email" type="email" name="accountEmail" placeholder="Email">
 			<input class="account__form_password" type="password" name="accountPassword" placeholder="Пароль">
-		</form>
-		<a href="#" class="account__forgotPassword">Забыли пароль?</a>
+			<a href="#" class="account__forgotPassword">Забыли пароль?</a>
 		<button class="account__buttonEntrance" type="submit">ВОЙТИ</button>
+		</form>
 
-</section>
 
+		<!-- Форма регистрации -->
+		<form class="registration switchedFormRegistration" action="#">
+			<div class="registration__userNameContainer">
+
+				<div class="registration__familyContainer">
+					<div class="registration__title">
+						<label class="registration__title_name">Фамилия</label>
+						<div class="registration__title_requiredField"> * </div>
+					</div>
+					<input type="text" class="registration__inputFamily" placeholder="Введите фамилию" required>
+				</div>
+
+				<div class="registration__nameContainer">
+					<div class="registration__title">
+						<label class="registration__title_name">Имя</label>
+						<div class="registration__title_requiredField"> * </div>
+					</div>
+					<input type="text" class="registration__inputName" placeholder="Введите имя" required>
+				</div>
+
+				<div class="registration__patronymicContainer">
+					<div class="registration__title">
+						<label class="registration__title_name">Отчество</label>
+						<div class="registration__title_requiredField"> * </div>
+					</div>
+					<input type="text" class="registration__inputPatronymic" placeholder="Введите отчество" required>
+				</div>
+
+			</div>
+
+			<div class="registration__genderContainer registration__genderContainer_marginTop">
+				<div class="registration__title">
+					<label class="registration__title_name">Пол</label>
+					<div class="registration__title_requiredField"> * </div>
+				</div>
+
+				<div class="registration__gender">
+					<div class="registration__choiceWomanContainer">
+						<label class="registration__title_nameGender">ЖЕН</label>
+						<input type="radio" class="registration__gender_choiceGender" name="choiceGender" >
+					</div>
+					<div class="registration__choiceManContainer">
+						<label class="registration__title_nameGender">МУЖ</label>
+						<input type="radio" class="registration__gender_choiceGender" name="choiceGender">
+					</div>
+				</div>
+
+			</div>
+
+			<div class="registration__userNameContainer">
+
+				<div class="registration__contactsContainer">
+					<div class="registration__title">
+						<label class="registration__title_name">E-mail</label>
+						<div class="registration__title_requiredField"> * </div>
+					</div>
+					<input type="email" class="registration__inputEmail" placeholder="Введите E-mail" required>
+				</div>
+
+				<div class="registration__cellContainer">
+					<div class="registration__title">
+						<label class="registration__title_name">Мобильный телефон</label>
+						<div class="registration__title_requiredField"> * </div>
+					</div>
+					<input type="tel" maxlength="11" class="registration__inputCell" placeholder="+7 800 555 35 35" required>
+				</div>
+
+				<div class="registration__dateContainer">
+					<div class="registration__title">
+						<label class="registration__title_name">Дата рождения</label>
+						<div class="registration__title_requiredField"> * </div>
+					</div>
+					<input type="date" class="registration__inputDate" required>
+				</div>
+
+			</div>
+
+			<div class="registration__requiredFieldContainer">
+				<div class="registration__title_requiredField"> * </div>
+				<span>Обязательные для заполнения поля</span>
+			</div>
+	
+			<div class="registration__consentContainer">
+				<div class="registration__consent">
+					<input type="checkbox" id="registration__consentAlerts"><label for="registration__consentAlerts">Согласен(на)
+						получать
+						рекламные оповещения (об акциях и спецпредложениях)</label>
+				</div>
+				<div class="registration__consent">
+					<input type="checkbox" id="registration__consentPersonalData"><label
+						 for="registration__consentPersonalData">Согласен(на) на
+						обработку персональных данных в целях реализации заказов</label>
+				</div>
+			</div>
+	
+			<button class="account__buttonRegistration" type="submit">РЕГИСТРАЦИЯ</button>
+
+		</form>
+
+	</section>
+
+	<script src="./script/registration.js"></script>
 </body>
 
 </html>

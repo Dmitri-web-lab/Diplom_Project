@@ -879,6 +879,7 @@ body {
 		&_orderButtonClose {
 			transition: all 0.2s ease;
 		}
+
 		&_orderButtonCloseActive {
 			position: absolute;
 			bottom: 10px;
@@ -892,6 +893,7 @@ body {
 			background-size: contain;
 			border: none;
 		}
+
 		&_orderButtonClose:hover {
 			background-color: #000;
 		}
@@ -1149,7 +1151,7 @@ body {
 			border-bottom: 1px solid $colorSelectSite;
 			background: none;
 			padding-bottom: 10px;
-
+			color: #adadad;
 		}
 
 		&_entrance:hover,
@@ -1172,7 +1174,7 @@ body {
 	&__form {
 		display: flex;
 		flex-direction: column;
-		gap: 38px;
+		gap: 30px;
 
 		&_email {
 			width: 33vw;
@@ -1201,7 +1203,8 @@ body {
 		color: #000;
 	}
 
-	&__buttonEntrance {
+	&__buttonEntrance,
+	&__buttonRegistration {
 		width: 194px;
 		height: 65px;
 		background-color: #fff;
@@ -1212,6 +1215,157 @@ body {
 	}
 }
 
+/* Стили регистрации */
+.registration {
+
+	&__userNameContainer {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.83vw;
+	}
+
+	&__title {
+		display: flex;
+		margin-bottom: 8px;
+
+		&_name {
+			font-weight: 700;
+			font-size: 1rem;
+
+		}
+
+		&_nameGender {
+			font-weight: 700;
+			font-size: 0.8rem;
+		}
+
+		&_requiredField {
+			color: #ec0e0e;
+			font-size: 12px;
+		}
+	}
+
+	&__inputFamily,
+	&__inputName {
+		width: 33vw;
+		height: 56px;
+		border: 1px solid $colorSelectSite;
+		border-radius: 15px;
+	}
+
+	&__inputPatronymic {
+		width: 67.8vw;
+		height: 56px;
+		border: 1px solid $colorSelectSite;
+		border-radius: 15px;
+	}
+
+	&__inputFamily,
+	&__inputName,
+	&__inputPatronymic {
+		@include descriptionFont();
+		color: #adadad;
+		font-size: 0.8rem;
+		padding-left: 2.1vw;
+	}
+
+	&__genderContainer {
+
+		&_marginTop {
+			margin-top: 15px;
+		}
+	}
+
+	&__gender {
+		margin-top: 3px;
+		display: flex;
+		align-items: center;
+		gap: 4.68vw;
+	}
+
+	&__choiceManContainer {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+
+	&__choiceWomanContainer {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+
+	}
+
+
+	&__contactsContainer {
+		margin-top: 18px;
+	}
+
+	&__inputCell {
+		width: 33vw;
+		height: 56px;
+		border: 1px solid $colorSelectSite;
+		border-radius: 15px;
+		padding-left: 2.1vw;
+	}
+
+	&__inputDate {
+		width: 33vw;
+		height: 56px;
+		border: 1px solid $colorSelectSite;
+		border-radius: 15px;
+		padding-left: 2.1vw;
+		padding-right: 1.5vw;
+
+	}
+
+	&__inputEmail {
+		width: 67.8vw;
+		height: 56px;
+		border: 1px solid $colorSelectSite;
+		border-radius: 15px;
+		padding-left: 2.1vw;
+
+	}
+
+	&__inputCell::placeholder,
+	&__inputDate::placeholder,
+	&__inputEmail::placeholder {
+		@include descriptionFont();
+		color: #adadad;
+		font-size: 0.8rem;
+
+	}
+
+	&__requiredFieldContainer {
+		display: flex;
+		align-items: flex-start;
+		gap: 9px;
+		margin-top: 28px;
+		margin-bottom: 28px;
+	}
+&__consentContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+	&__consent {
+		display: flex;
+		align-items: center;
+		gap: 19px;
+	}
+
+	&__consent > label{
+		@include descriptionFont();
+		color: #adadad;
+		font-size: 0.8rem;
+	}
+
+}
+/* Класс переключения форм "Входа" и "Регистрации" */
+.switchedFormRegistration {
+	display: none;
+}
 
 /* Убираем стрелки в input типе number */
 input[type=number]::-webkit-inner-spin-button,

@@ -1065,6 +1065,7 @@ body {
   border-bottom: 1px solid #FB3A61;
   background: none;
   padding-bottom: 10px;
+  color: #adadad;
 }
 .account__selectionLine_entrance:hover, .account__selectionLine_registration:hover {
   cursor: pointer;
@@ -1082,7 +1083,7 @@ body {
 .account__form {
   display: flex;
   flex-direction: column;
-  gap: 38px;
+  gap: 30px;
 }
 .account__form_email {
   width: 33vw;
@@ -1115,7 +1116,7 @@ body {
 .account__forgotPassword {
   color: #000;
 }
-.account__buttonEntrance {
+.account__buttonEntrance, .account__buttonRegistration {
   width: 194px;
   height: 65px;
   background-color: #fff;
@@ -1123,6 +1124,136 @@ body {
   border-radius: 24px;
   color: #FB3A61;
   margin-top: 18px;
+}
+
+/* Стили регистрации */
+.registration__userNameContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.83vw;
+}
+.registration__title {
+  display: flex;
+  margin-bottom: 8px;
+}
+.registration__title_name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.registration__title_nameGender {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.registration__title_requiredField {
+  color: #ec0e0e;
+  font-size: 12px;
+}
+.registration__inputFamily, .registration__inputName {
+  width: 33vw;
+  height: 56px;
+  border: 1px solid #FB3A61;
+  border-radius: 15px;
+}
+.registration__inputPatronymic {
+  width: 67.8vw;
+  height: 56px;
+  border: 1px solid #FB3A61;
+  border-radius: 15px;
+}
+.registration__inputFamily, .registration__inputName, .registration__inputPatronymic {
+  font-family: "palanquinregular";
+  font-weight: normal;
+  font-style: normal;
+  color: #adadad;
+  font-size: 0.8rem;
+  padding-left: 2.1vw;
+}
+.registration__genderContainer_marginTop {
+  margin-top: 15px;
+}
+.registration__gender {
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4.68vw;
+}
+.registration__choiceManContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.registration__choiceWomanContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.registration__contactsContainer {
+  margin-top: 18px;
+}
+.registration__inputCell {
+  width: 33vw;
+  height: 56px;
+  border: 1px solid #FB3A61;
+  border-radius: 15px;
+  padding-left: 2.1vw;
+}
+.registration__inputDate {
+  width: 33vw;
+  height: 56px;
+  border: 1px solid #FB3A61;
+  border-radius: 15px;
+  padding-left: 2.1vw;
+  padding-right: 1.5vw;
+}
+.registration__inputEmail {
+  width: 67.8vw;
+  height: 56px;
+  border: 1px solid #FB3A61;
+  border-radius: 15px;
+  padding-left: 2.1vw;
+}
+.registration__inputCell::-moz-placeholder, .registration__inputDate::-moz-placeholder, .registration__inputEmail::-moz-placeholder {
+  font-family: "palanquinregular";
+  font-weight: normal;
+  font-style: normal;
+  color: #adadad;
+  font-size: 0.8rem;
+}
+.registration__inputCell::placeholder, .registration__inputDate::placeholder, .registration__inputEmail::placeholder {
+  font-family: "palanquinregular";
+  font-weight: normal;
+  font-style: normal;
+  color: #adadad;
+  font-size: 0.8rem;
+}
+.registration__requiredFieldContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+.registration__consentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.registration__consent {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+.registration__consent > label {
+  font-family: "palanquinregular";
+  font-weight: normal;
+  font-style: normal;
+  color: #adadad;
+  font-size: 0.8rem;
+}
+
+/* Класс переключения форм "Входа" и "Регистрации" */
+.switchedFormRegistration {
+  display: none;
 }
 
 /* Убираем стрелки в input типе number */

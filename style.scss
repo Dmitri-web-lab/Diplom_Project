@@ -150,7 +150,28 @@ body {
 		&_manual:hover {
 			background-image: url("../images/home_page/manual_color.svg");
 		}
-
+		&_favourites {
+			background-image: url("../images/discounted_products/favourites.svg");
+			background-size: cover;
+			width: 20px;
+			height: 20px;
+			opacity: 0.7;
+			transition: all 0.2s ease-out;
+		}
+		&_favourites:hover {
+			background-image: url("../images/discounted_products/favouritesColor.svg");
+		}
+		&_pageFavourites {
+			background-image: url("../images/discounted_products/favouritesColor.svg");
+			background-size: cover;
+			width: 20px;
+			height: 20px;
+			opacity: 0.7;
+			transition: all 0.2s ease-out;
+		}
+		&_pageFavourites:hover {
+			cursor: default;
+		}
 		&_basket {
 			display: block;
 			background-size: cover;
@@ -862,8 +883,43 @@ body {
 			width: 51px;
 		}
 
+		&_wrupperOrderButton {
+			position: relative;
+			overflow: hidden;
+		}
+
+		&_lining {
+			height: 64px;
+			width: 0px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			background-color: #fff;
+			opacity: 0.5;
+		}
+
+		&_liningAnimation {
+			animation: 1s animationFormLining linear forwards;
+		}
+
+		@keyframes animationFormLining {
+			0% {
+				width: 273px;
+				display: block;
+			}
+
+			95% {
+				width: 0px;
+			}
+
+			100% {
+				display: none;
+			}
+		}
+
 		&_orderButton {
 			padding: 23px 46px;
+			width: 273px;
 			border-radius: 24px;
 			background: linear-gradient(180deg, #fb3a61, #99394c, #500010);
 			color: #fff;
@@ -877,6 +933,7 @@ body {
 		}
 
 		&_orderButtonClose {
+			display: none;
 			transition: all 0.2s ease;
 		}
 
@@ -936,6 +993,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		gap: 4vw;
+		flex-wrap: wrap;
 		@include descriptionFont();
 	}
 
@@ -946,6 +1004,10 @@ body {
 
 	&__orderProductGrey {
 		background-color: #f8f8f8;
+	}
+
+	&__description {
+		width: 200px;
 	}
 
 	&__quantity {
@@ -1018,19 +1080,23 @@ body {
 			border: 1px solid #000;
 			cursor: pointer;
 		}
+
+		&_countColor:hover {
+			color: #000;
+			background-color: #fff;
+			border: 1px solid #000;
+			cursor: pointer;
+		}
+
+		&_countBlack:hover {
+			color: $colorSelectSite;
+			border: 1px solid $colorSelectSite;
+			cursor: pointer;
+		}
 	}
 
-	&__quantity_countColor:hover {
-		color: #000;
-		background-color: #fff;
-		border: 1px solid #000;
-		cursor: pointer;
-	}
-
-	&__quantity_countBlack:hover {
-		color: $colorSelectSite;
-		border: 1px solid $colorSelectSite;
-		cursor: pointer;
+	&__page {
+		width: 103px;
 	}
 
 	&__priceContainer {
@@ -1077,6 +1143,7 @@ body {
 	}
 
 	&__cost {
+		width: 19vw;
 		margin-left: 0.8vw;
 		font-size: 1.5rem;
 		@include titleFont();
@@ -1344,24 +1411,27 @@ body {
 		margin-top: 28px;
 		margin-bottom: 28px;
 	}
-&__consentContainer {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
+
+	&__consentContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
 	&__consent {
 		display: flex;
 		align-items: center;
 		gap: 19px;
 	}
 
-	&__consent > label{
+	&__consent>label {
 		@include descriptionFont();
 		color: #adadad;
 		font-size: 0.8rem;
 	}
 
 }
+
 /* Класс переключения форм "Входа" и "Регистрации" */
 .switchedFormRegistration {
 	display: none;
@@ -1578,6 +1648,7 @@ input[type=number]::-webkit-outer-spin-button {
 			}
 
 			&_orderButtonClose {
+				display: block;
 				position: absolute;
 				right: 0px;
 				height: 100%;

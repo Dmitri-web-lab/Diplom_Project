@@ -212,9 +212,9 @@ dataSale.forEach(prod => {
 	style="background-image: url(${prod.photoProduct}); width: ${prod.widthImage}px;">
 	<div class="discounted__photoProduct_favourites"></div>
 </div>
-<h4 class="discounted__cardTitle">${prod.title}</h4>
+<h4 class="discounted__cardTitle">${prod.description}</h4>
 <p class="discounted__cardSubtitle">${prod.subtitle}</p>
-<div class="discounted__cardArticul">Артикул: <b>${prod.articul}</b></div>
+<div class="discounted__cardArticul">Артикул: <b>${prod.article}</b></div>
 <div class="discounted__priceWrupper">
 	<div class="discounted__cardPrice">
 		<div class="newPrice">${prod.price}</div>
@@ -225,7 +225,7 @@ dataSale.forEach(prod => {
 		<img src="./images/discounted_products/currencyGrey.svg" class="currencyGrey">
 	</div>
 </div>
-<button class="discounted__addBasket">ДОБАВИТЬ В КОРЗИНУ</button>
+<button id="${prod.id}" class="discounted__addBasket">ДОБАВИТЬ В КОРЗИНУ</button>
 </div>
 	`);
 });
@@ -241,9 +241,9 @@ dataStock.forEach(prod => {
 	<div class="discounted__photoProduct_favourites"></div>
 	<div class="discounted__photoProduct_stock">-${prod.stock}%</div>
 </div>
-<h4 class="discounted__cardTitle">${prod.title}</h4>
+<h4 class="discounted__cardTitle">${prod.description}</h4>
 <p class="discounted__cardSubtitle">${prod.subtitle}</p>
-<div class="discounted__cardArticul">Артикул: <b>${prod.articul}</b></div>
+<div class="discounted__cardArticul">Артикул: <b>${prod.article}</b></div>
 <div class="discounted__priceWrupper">
 	<div class="discounted__cardPrice">
 		<div class="newPrice">${prod.price}</div>
@@ -254,7 +254,68 @@ dataStock.forEach(prod => {
 		<img src="./images/discounted_products/currencyGrey.svg" class="currencyGrey">
 	</div>
 </div>
-<button class="discounted__addBasket">ДОБАВИТЬ В КОРЗИНУ</button>
+<button id="${prod.id}" class="discounted__addBasket">ДОБАВИТЬ В КОРЗИНУ</button>
 </div>
 	`);
 });
+
+let email = 'example@gmail.com';
+
+function convertGetLocalStorage() { // Функция для преобразования полученных данных из localStorage в объект
+	let getOrdersArray = localStorage.getItem(email);
+	let parseOrders = JSON.parse(getOrdersArray);
+	return parseOrders;
+}
+
+function convertSetLocalStorage(data) { // Функция для преобразования объекта в строку для записи в localStorage
+	let strokeArrayOrders = JSON.stringify(data);
+	localStorage.setItem(email, strokeArrayOrders);
+}
+
+function recordProductaLocalStorage(object) {
+	let parseStorage = convertGetLocalStorage();
+	parseStorage.push(object);
+	convertSetLocalStorage(parseStorage);
+}
+
+function createObjectProduct(object) {
+	let orderObject = {
+		id: object.id,
+		description: `${object.description}`,
+		article: object.article,
+		page: object.page,
+		quantity: 1,
+		price: object.price
+	}
+	recordProductaLocalStorage(orderObject);
+}
+
+function searchDataProduct(arrayObject, getAttrElementButton) {
+	const product = arrayObject.find(function (item) {
+		return item.id === getAttrElementButton;
+	});
+	if (product != undefined) {
+		createObjectProduct(product);
+	}
+}
+
+// Количество товара в корзине
+function calculationQuantityProductBasket() {
+	let parseOrders = convertGetLocalStorage();
+	document.querySelector('.head__userFunctions_countBuy').textContent = `${parseOrders.length}`;
+}
+
+const discountedAddBasket = document.querySelectorAll('.discounted__addBasket');
+discountedAddBasket.forEach(selectedButton => {
+	selectedButton.addEventListener('click', (event) => {
+		let targetElementButton = event.target;
+		let getAttrElementButton = Number(targetElementButton.getAttribute('id'));
+
+		searchDataProduct(dataSale, getAttrElementButton);
+		searchDataProduct(dataStock, getAttrElementButton);
+
+		calculationQuantityProductBasket();
+	})
+})
+
+calculationQuantityProductBasket();

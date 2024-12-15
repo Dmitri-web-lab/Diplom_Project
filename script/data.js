@@ -22,71 +22,77 @@ const dataProduct = [{
 // Данные о продуктов для распродажи
 const dataSale = [
 	{
-		id: 1,
+		id: 10,
 		widthImage: 200,
 		photoProduct: "./images/discounted_products/todayTomorrow.png",
-		title: "Today Tomorrow",
+		description: "Today Tomorrow",
 		subtitle: "Парфюмерная вода для нее, 50 мл",
-		articul: 123456,
+		article: 123456,
 		price: 1058,
-		oldPrice: 1589
+		oldPrice: 1589,
+		page: 25
 	},
 	{
-		id: 2,
+		id: 20,
 		widthImage: 101.3,
 		photoProduct: "./images/discounted_products/coffeeMask.png",
-		title: "Cofee Mask",
+		description: "Cofee Mask",
 		subtitle: "Питательная маска с богатыми маслами, 75 мл",
-		articul: 789125,
+		article: 789125,
 		price: 998,
-		oldPrice: 1200
+		oldPrice: 1200,
+		page: 25
 	},
 	{
-		id: 2,
-		widthImage: 101.3,
-		photoProduct: "./images/discounted_products/coffeeMask.png",
-		title: "Cofee Mask",
-		subtitle: "Питательная маска с богатыми маслами, 75 мл",
-		articul: 789125,
-		price: 998,
-		oldPrice: 1200
+		id: 30,
+		widthImage: 110,
+		photoProduct: "./images/discounted_products/avonLuckProd.jpg",
+		description: "Avon Luck",
+		subtitle: "Туалетная вода для него, 75 мл",
+		article: 538288,
+		price: 1099,
+		oldPrice: 2199,
+		page: 25
 	},
 ];
 
 // Данные о продуктах для акций
 const dataStock = [
 	{
-		id: 2,
-		widthImage: 101.3,
-		stock: 15,
-		photoProduct: "./images/discounted_products/coffeeMask.png",
-		title: "Cofee Mask",
-		subtitle: "Питательная маска с богатыми маслами, 75 мл",
-		articul: 789125,
-		price: 998,
-		oldPrice: 1200
+		id: 40,
+		widthImage: 110,
+		stock: 20,
+		photoProduct: "./images/discounted_products/perceiveDew.jpg",
+		description: "Perceive Dew",
+		subtitle: "Инновационный набор для нее, 45 мл",
+		article: 648587,
+		price: 1429,
+		oldPrice: 2264,
+		page: 25
 	},
 	{
-		id: 2,
-		widthImage: 101.3,
-		stock: 15,
-		photoProduct: "./images/discounted_products/coffeeMask.png",
-		title: "Cofee Mask",
-		subtitle: "Питательная маска с богатыми маслами, 75 мл",
-		articul: 789125,
-		price: 998,
-		oldPrice: 1200
+		id: 50,
+		widthImage: 110,
+		stock: 10,
+		photoProduct: "./images/discounted_products/incandessence.jpg",
+		description: "Incandessence",
+		subtitle: "Парфюмерная вода для нее, 30 мл",
+		article: 599718,
+		price: 619,
+		oldPrice: 1249,
+		page: 25
 	},
 	{
-		id: 2,
-		widthImage: 101.3,
+		id: 60,
+		widthImage: 110,
 		stock: 15,
-		photoProduct: "./images/discounted_products/coffeeMask.png",
-		title: "Cofee Mask",
-		subtitle: "Питательная маска с богатыми маслами, 75 мл",
-		articul: 789125,
-		price: 998,
-		oldPrice: 1200
+		photoProduct: "./images/discounted_products/littleBlackDress.jpg",
+		description: "Little Black Dress",
+		subtitle: "Парфюмерная вода для нее, 10 мл",
+		article: 645195,
+		price: 349,
+		oldPrice: 499,
+		page: 25
 	},
 ];
 // Данные для страницы корзины
@@ -123,3 +129,11 @@ const dataBasket = [{
 	price: 884
 }
 ];
+
+// Данные о стоимости товара
+const costOrder = [
+	{ article: 454445, price: 1000 }, { article: 645327, price: 1500 },
+	{ article: 648587, price: 1429 }, { article: 123456, price: 1058 },
+	{ article: 789125, price: 998 }, { article: 538288, price: 1099 },
+	{ article: 599718, price: 619 }, { article: 645195, price: 349 }
+]

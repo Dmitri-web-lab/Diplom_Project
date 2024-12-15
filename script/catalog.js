@@ -8,33 +8,75 @@ let arrayOrders = [];
 let uniqueID = 0;
 let email = 'example@gmail.com'
 
+function convertGetLocalStorage() { // Функция для преобразования полученных данных из localStorage в объект
+	let getOrdersArray = localStorage.getItem(email);
+	let parseOrders = JSON.parse(getOrdersArray);
+	return parseOrders;
+}
+
+function convertSetLocalStorage(data) { // Функция для преобразования объекта в строку для записи в localStorage
+	let strokeArrayOrders = JSON.stringify(data);
+	localStorage.setItem(email, strokeArrayOrders);
+}
+
 const headUserFunctionsCountBuy = document.querySelector('.head__userFunctions_countBuy');
 
-function addCountBuy() {
+function addCountBuy() { // Функция подсчета прибавления количества товара в корзине 
 	if (localStorage.getItem(email)) {
-		let getOrdersArray = localStorage.getItem(email);
-		let parseOrders = JSON.parse(getOrdersArray);
+		let parseOrders = convertGetLocalStorage();
 		headUserFunctionsCountBuy.textContent = `${parseOrders.length}`;
 	}
 }
 addCountBuy();
 
+function animationLiningButton() { // Функция анимации кнопки
+	const liningButton = document.querySelector('.catalog__form_lining');
+	liningButton.classList.toggle('catalog__form_liningAnimation');
+	addBasketCatalogPage.textContent = 'ЗАКАЗ ДОБАВЛЕН';
+
+	setTimeout(() => {
+		liningButton.classList.toggle('catalog__form_liningAnimation');
+		addBasketCatalogPage.textContent = 'ДОБАВИТЬ В КОРЗИНУ';
+	}, 1000);
+}
+
+let addPriceData;
+
 addBasketCatalogPage.addEventListener('click', function () {
-	uniqueID++;
+	if (localStorage.getItem(email)) {
+		let parseOrders = convertGetLocalStorage();
+		uniqueID = parseOrders.length + 1
+	} else {
+		uniqueID++;
+	}
+
+	costOrder.forEach(dataPrice => {
+		if (dataPrice.article == orderArticle.value) {
+			addPriceData = dataPrice.price;
+		}
+	})
 	let orderObject = {
 		id: uniqueID,
 		description: `${orderDescription.value}`,
 		article: `${orderArticle.value}`,
 		page: `${orderPage.value}`,
-		quantity: `${orderQuantity.value}`
+		quantity: `${orderQuantity.value}`,
+		price: addPriceData
 	}
-	arrayOrders.push(orderObject);
-	console.log(arrayOrders);
 
-	let strokeArrayOrders = JSON.stringify(arrayOrders);
-	localStorage.setItem(email, strokeArrayOrders);
+	if (localStorage.getItem(email)) {
+
+		let parseOrdersAvailale = convertGetLocalStorage();
+		parseOrdersAvailale.push(orderObject)
+		convertSetLocalStorage(parseOrdersAvailale)
+	} else {
+		arrayOrders.push(orderObject);
+		convertSetLocalStorage(arrayOrders)
+	}
 
 	addCountBuy();
+	animationLiningButton();
+
 });
 
 // Для адаптива, меняет количество строк в теге textarea с 10 на 2

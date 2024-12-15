@@ -136,6 +136,28 @@ body {
 .head__userFunctions_manual:hover {
   background-image: url("../images/home_page/manual_color.svg");
 }
+.head__userFunctions_favourites {
+  background-image: url("../images/discounted_products/favourites.svg");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: all 0.2s ease-out;
+}
+.head__userFunctions_favourites:hover {
+  background-image: url("../images/discounted_products/favouritesColor.svg");
+}
+.head__userFunctions_pageFavourites {
+  background-image: url("../images/discounted_products/favouritesColor.svg");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: all 0.2s ease-out;
+}
+.head__userFunctions_pageFavourites:hover {
+  cursor: default;
+}
 .head__userFunctions_basket {
   display: block;
   background-size: cover;
@@ -801,8 +823,37 @@ body {
 .catalog__form_quantity input {
   width: 51px;
 }
+.catalog__form_wrupperOrderButton {
+  position: relative;
+  overflow: hidden;
+}
+.catalog__form_lining {
+  height: 64px;
+  width: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #fff;
+  opacity: 0.5;
+}
+.catalog__form_liningAnimation {
+  animation: 1s animationFormLining linear forwards;
+}
+@keyframes animationFormLining {
+  0% {
+    width: 273px;
+    display: block;
+  }
+  95% {
+    width: 0px;
+  }
+  100% {
+    display: none;
+  }
+}
 .catalog__form_orderButton {
   padding: 23px 46px;
+  width: 273px;
   border-radius: 24px;
   background: linear-gradient(180deg, #fb3a61, #99394c, #500010);
   color: #fff;
@@ -814,6 +865,7 @@ body {
   opacity: 0.8;
 }
 .catalog__form_orderButtonClose {
+  display: none;
   transition: all 0.2s ease;
 }
 .catalog__form_orderButtonCloseActive {
@@ -871,6 +923,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 4vw;
+  flex-wrap: wrap;
   font-family: "palanquinregular";
   font-weight: normal;
   font-style: normal;
@@ -881,6 +934,9 @@ body {
 }
 .orders__orderProductGrey {
   background-color: #f8f8f8;
+}
+.orders__description {
+  width: 200px;
 }
 .orders__quantity {
   display: flex;
@@ -953,6 +1009,9 @@ body {
   border: 1px solid #FB3A61;
   cursor: pointer;
 }
+.orders__page {
+  width: 103px;
+}
 .orders__priceContainer {
   display: flex;
   gap: 2px;
@@ -990,6 +1049,7 @@ body {
   align-items: center;
 }
 .orders__cost {
+  width: 19vw;
   margin-left: 0.8vw;
   font-size: 1.5rem;
   font-family: "cuprumregular";
@@ -1431,6 +1491,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 0.8rem;
   }
   .catalog__form_orderButtonClose {
+    display: block;
     position: absolute;
     right: 0px;
     height: 100%;

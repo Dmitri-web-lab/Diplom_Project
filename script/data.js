@@ -23,6 +23,7 @@ const dataProduct = [{
 const dataSale = [
 	{
 		id: 10,
+		relationship: "sale",
 		widthImage: 200,
 		photoProduct: "./images/discounted_products/todayTomorrow.png",
 		description: "Today Tomorrow",
@@ -34,6 +35,7 @@ const dataSale = [
 	},
 	{
 		id: 20,
+		relationship: "sale",
 		widthImage: 101.3,
 		photoProduct: "./images/discounted_products/coffeeMask.png",
 		description: "Cofee Mask",
@@ -45,6 +47,7 @@ const dataSale = [
 	},
 	{
 		id: 30,
+		relationship: "sale",
 		widthImage: 110,
 		photoProduct: "./images/discounted_products/avonLuckProd.jpg",
 		description: "Avon Luck",
@@ -60,6 +63,7 @@ const dataSale = [
 const dataStock = [
 	{
 		id: 40,
+		relationship: "stock",
 		widthImage: 110,
 		stock: 20,
 		photoProduct: "./images/discounted_products/perceiveDew.jpg",
@@ -72,6 +76,7 @@ const dataStock = [
 	},
 	{
 		id: 50,
+		relationship: "stock",
 		widthImage: 110,
 		stock: 10,
 		photoProduct: "./images/discounted_products/incandessence.jpg",
@@ -84,6 +89,7 @@ const dataStock = [
 	},
 	{
 		id: 60,
+		relationship: "stock",
 		widthImage: 110,
 		stock: 15,
 		photoProduct: "./images/discounted_products/littleBlackDress.jpg",

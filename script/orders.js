@@ -39,8 +39,9 @@ function recalculationCostQuantityPrice() { // Пересчет стоимост
 
 }
 
-
+// Проверка на пустую корзину, если заказов нет то блок "Корзина пуста" активен
 function exampleOrdersDefault() {
+	let parseOrders = convertGetLocalStorage();
 	if (parseOrders.length == 0) {
 		ordersDefaultOrderBlock.style.display = `flex`;
 	} else {

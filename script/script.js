@@ -3,6 +3,7 @@ const navMenuBtnClose = document.querySelector('.head__nav-menu_btnClose');
 const headNavMenu = document.querySelector('.head__nav-menu');
 const navMenuLiningAdaptive = document.querySelector('.head__nav-menu_menuLiningAdaptive');
 
+
 function openBurgerMenu() {
 	headNavMenu.style.display = `flex`;
 	navMenuLiningAdaptive.style.cssText = `
@@ -12,9 +13,25 @@ function openBurgerMenu() {
 		left: 0px;
 		background-color: #44444459;
 	`;
+	let buttonWidth;
+	let buttonHeight;
+	let btnCloseWidth;
+	let paddingLeftbtnClose;
+	if (window.innerWidth <= 780) {
+		buttonWidth = "40";
+		buttonHeight = "40";
+		btnCloseWidth = "14";
+		paddingLeftbtnClose = "6.2";
+	} else {
+		buttonWidth = "50";
+		buttonHeight = "50";
+		btnCloseWidth = "20";
+		paddingLeftbtnClose = "0";
+	}
 	this.style.cssText = `
-		width: 50px; 
-		height: 50px;
+		width: ${buttonWidth}px; 
+		height: ${buttonHeight}px;
+		padding-left: ${paddingLeftbtnClose}px;
 		margin-left: 30px;
 		margin-top: 20px;
 		border-radius: 50%;
@@ -26,6 +43,7 @@ function openBurgerMenu() {
 	--heightCloseLine: 0.8px;
 	--afterBtnClose: rotate(55deg);
 	--beforeBtnClose: rotate(-55deg);
+	--btnCloseWidth: ${btnCloseWidth}px;
 	--btnCloseLineColor: #00000070;
 	--btnCloseCenterLineColor: #fff;
 	--menuCenterLineHoverMarginBottom: 0px;
@@ -50,23 +68,17 @@ function closeBurgerMenu() {
 		height: 28px;
 		margin-left: 0px;
 		margin-top: 0px;
+		padding-left: 0px;
 		border-radius: 0;
 		background-color: #fff;
 		gap: 5.5px;
 		border: none;
 	`;
-	/* Для изменения параметров кнопки при адаптиве для мобильников
-let testPosition;
-	if (window.innerWidth <= 550) {
-		testPosition = "absolute";
-	} else {
-		testPosition = "static";
-	}
-	*/
 	rootStyle.style.cssText = `
 	--heightCloseLine: 2px;
 	--afterBtnClose: rotate(0deg);
 	--beforeBtnClose: rotate(0deg);
+	--btnCloseWidth: 20px;
 	--btnCloseLineColor: #000;
 	--btnCloseCenterLineColor: #000;
 	--menuCenterLineHoverMarginBottom: 6px;
@@ -139,7 +151,7 @@ function sortThroughBlocks(numberId) {
 			change.style.display = `none`;
 		}
 	})
-	buttonSwitching.forEach(item => { // Кнопки
+	buttonSwitching.forEach(item => { // Кнопки 
 		if (item.getAttribute('id') == numberId) {
 			item.classList.remove('slider__inputDeactive');
 			item.classList.add('slider__inputActive');
@@ -204,13 +216,13 @@ arrowLeft.addEventListener('click', function () {
 
 // Выгрузка товаров раздела "Распродажа" на страницу
 const cardContainer = document.querySelector('.discounted__cardContainer');
-
-dataSale.forEach(prod => {
-	cardContainer.insertAdjacentHTML('beforeend', `
+function createProductSaleSection() {
+	dataSale.forEach(prod => {
+		cardContainer.insertAdjacentHTML('beforeend', `
 	<div class="discounted__card">
 	<div class="discounted__photoProduct" id="${prod.id}"
 	style="background-image: url(${prod.photoProduct}); width: ${prod.widthImage}px;">
-	<div class="discounted__photoProduct_favourites"></div>
+	<div id="${prod.id}" class="discounted__photoProduct_favourites"></div>
 </div>
 <h4 class="discounted__cardTitle">${prod.description}</h4>
 <p class="discounted__cardSubtitle">${prod.subtitle}</p>
@@ -228,17 +240,20 @@ dataSale.forEach(prod => {
 <button id="${prod.id}" class="discounted__addBasket">ДОБАВИТЬ В КОРЗИНУ</button>
 </div>
 	`);
-});
+	});
+}
+createProductSaleSection()
 
 // Выгрузка товаров раздела "Акция" на страницу
 const cardContainerStock = document.querySelector('.discounted__cardContainerStock');
 
-dataStock.forEach(prod => {
-	cardContainerStock.insertAdjacentHTML('beforeend', `
+function createProductsPromotionSection() {
+	dataStock.forEach(prod => {
+		cardContainerStock.insertAdjacentHTML('beforeend', `
 	<div class="discounted__card">
 	<div class="discounted__photoProduct" id="${prod.id}"
 	style="background-image: url(${prod.photoProduct}); width: ${prod.widthImage}px;">
-	<div class="discounted__photoProduct_favourites"></div>
+	<div id="${prod.id}" class="discounted__photoProduct_favourites"></div>
 	<div class="discounted__photoProduct_stock">-${prod.stock}%</div>
 </div>
 <h4 class="discounted__cardTitle">${prod.description}</h4>
@@ -257,26 +272,26 @@ dataStock.forEach(prod => {
 <button id="${prod.id}" class="discounted__addBasket">ДОБАВИТЬ В КОРЗИНУ</button>
 </div>
 	`);
-});
+	});
+}
+createProductsPromotionSection();
 
-let email = 'example@gmail.com';
+let email = 'example@gmail.com'; // Проверочный email характеризующий пользователя
+let addFavouritesProduct = "favourites"; // Ключ для избранных товаров
 
-function convertGetLocalStorage() { // Функция для преобразования полученных данных из localStorage в объект
-	let getOrdersArray = localStorage.getItem(email);
+function convertGetLocalStorage(key) { // Функция для преобразования полученных данных из localStorage в объект
+	let getOrdersArray = localStorage.getItem(key);
 	let parseOrders = JSON.parse(getOrdersArray);
 	return parseOrders;
 }
 
-function convertSetLocalStorage(data) { // Функция для преобразования объекта в строку для записи в localStorage
+function convertSetLocalStorage(key, data) { // Функция для преобразования объекта в строку для записи в localStorage
 	let strokeArrayOrders = JSON.stringify(data);
-	localStorage.setItem(email, strokeArrayOrders);
+	localStorage.setItem(key, strokeArrayOrders);
 }
 
-function recordProductaLocalStorage(object) {
-	let parseStorage = convertGetLocalStorage();
-	parseStorage.push(object);
-	convertSetLocalStorage(parseStorage);
-}
+// Создание объекта для добавления в общий массив данных из хранилища
+let arrayAddProduct = []; // Массив на случай если корзина товаров пуста
 
 function createObjectProduct(object) {
 	let orderObject = {
@@ -287,9 +302,20 @@ function createObjectProduct(object) {
 		quantity: 1,
 		price: object.price
 	}
-	recordProductaLocalStorage(orderObject);
+
+	if (localStorage.getItem(email)) { // Проверка на наличие ключа в хранилище
+
+		let parseOrdersAvailale = convertGetLocalStorage(email); // Если ключ есть, то записываем в массив в хранилище
+		parseOrdersAvailale.push(orderObject);
+		convertSetLocalStorage(email, parseOrdersAvailale);
+	} else {
+		arrayAddProduct.push(orderObject); // Иначе создаем запись с ключом - email-ом и массивом, и добавляем товар в массив
+		convertSetLocalStorage(email, arrayAddProduct);
+	}
+	
 }
 
+// Поиск товара по id в хранилище
 function searchDataProduct(arrayObject, getAttrElementButton) {
 	const product = arrayObject.find(function (item) {
 		return item.id === getAttrElementButton;
@@ -301,21 +327,53 @@ function searchDataProduct(arrayObject, getAttrElementButton) {
 
 // Количество товара в корзине
 function calculationQuantityProductBasket() {
-	let parseOrders = convertGetLocalStorage();
-	document.querySelector('.head__userFunctions_countBuy').textContent = `${parseOrders.length}`;
+	if (convertGetLocalStorage(email)) {
+		let parseOrders = convertGetLocalStorage(email);
+		document.querySelector('.head__userFunctions_countBuy').textContent = `${parseOrders.length}`;
+	} else {
+		document.querySelector('.head__userFunctions_countBuy').textContent = '0';
+
+	}
 }
 
+// Кнопка добавления товара в корзину
 const discountedAddBasket = document.querySelectorAll('.discounted__addBasket');
 discountedAddBasket.forEach(selectedButton => {
 	selectedButton.addEventListener('click', (event) => {
 		let targetElementButton = event.target;
 		let getAttrElementButton = Number(targetElementButton.getAttribute('id'));
 
-		searchDataProduct(dataSale, getAttrElementButton);
-		searchDataProduct(dataStock, getAttrElementButton);
+		searchDataProduct(dataSale, getAttrElementButton); // Передаем в функцию массив с данными и id в функцию для записи товара в хранилище
+		searchDataProduct(dataStock, getAttrElementButton); // аналогично строке - 317
 
-		calculationQuantityProductBasket();
+		calculationQuantityProductBasket(); // Пересчитываем количество товара в корзине и выводим число на страницу
 	})
 })
 
-calculationQuantityProductBasket();
+calculationQuantityProductBasket(); // Аналогично строке 320 при загрузке страницы
+
+// Функция для добавления товаров в избранное
+const allButtonsFavourites = document.querySelectorAll('.discounted__photoProduct_favourites');
+allButtonsFavourites.forEach(button => {
+	button.addEventListener('click', (event) => {
+		let arrayFavourites = [];
+		let selectedElement = event.target;
+		let elementID = Number(selectedElement.getAttribute('id'));
+		let newObjectFavourites = {
+			id: elementID,
+			favouritesPage: "relationship"
+		}
+		if (!localStorage.getItem(addFavouritesProduct)) { // Проверяем если такого ключа нет, то создаем его и записываем массив с объектом
+			arrayFavourites.push(newObjectFavourites);
+		convertSetLocalStorage(addFavouritesProduct, arrayFavourites);
+		} else { // А если есть такой ключ, то получаем массив, добавляем еще объект и записываем в хранилище
+			let getArrayFavourites = convertGetLocalStorage(addFavouritesProduct);
+			getArrayFavourites.push(newObjectFavourites);
+		convertSetLocalStorage(addFavouritesProduct, getArrayFavourites);
+		}
+
+
+
+	})
+
+})

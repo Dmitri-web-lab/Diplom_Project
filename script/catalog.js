@@ -41,7 +41,7 @@ function animationLiningButton() { // Функция анимации кнопк
 }
 
 let addPriceData;
-
+// Кнопка для добавления заказа в корзину
 addBasketCatalogPage.addEventListener('click', function () {
 	if (localStorage.getItem(email)) {
 		let parseOrders = convertGetLocalStorage();

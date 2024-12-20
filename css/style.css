@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   font-size: 1rem;
   z-index: 1;
 }
@@ -63,12 +64,12 @@ body {
   display: none;
 }
 .head__nav-menu a {
-  height: 1rem;
   display: flex;
   align-items: center;
   font-family: "ralewaythin";
   font-weight: normal;
   font-style: normal;
+  height: 1rem;
   font-size: 0.75rem;
 }
 .head__nav-menu a:hover {
@@ -630,6 +631,40 @@ body {
 .manual__arrowDown {
   width: 30px;
   margin-left: calc(50% - 15px);
+}
+
+/* Стили страницы - Контакты */
+.contacts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+.contacts__container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.contacts__wrupper {
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+}
+.contacts__wrupper_title {
+  padding-bottom: 5px;
+}
+.contacts__title {
+  font-family: "cuprumregular";
+  font-weight: normal;
+  font-style: normal;
+  padding-bottom: 15px;
+  font-size: 1.5rem;
+}
+.contacts__socialContainer {
+  display: flex;
+  gap: 15px;
+}
+.contacts__socialContainer_image {
+  width: 30px;
+  height: 30px;
 }
 
 /* Стили блока подписки */
@@ -1362,6 +1397,57 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+/* Стили страницы 404 */
+.notFound {
+  display: flex;
+  gap: 5vw;
+  justify-content: center;
+  align-items: center;
+}
+.notFound__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.notFound__title {
+  font-size: 5rem;
+  font-family: "cuprumregular";
+  font-weight: normal;
+  font-style: normal;
+  color: #FB3A61;
+}
+.notFound__description {
+  font-size: 2rem;
+  font-family: "ralewaythin";
+  font-weight: normal;
+  font-style: normal;
+  color: #FB3A61;
+}
+.notFound__buttonBackMain {
+  width: 250px;
+  height: 65px;
+  border: 1px solid #FB3A61;
+  border-radius: 24px;
+  background-color: #fff;
+  color: #FB3A61;
+  font-family: "ralewaythin";
+  font-weight: normal;
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 19px;
+  transition: all 0.2s ease-out;
+}
+.notFound__buttonBackMain:hover {
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+.notFound__image {
+  width: 44vw;
+}
+
 /* Адаптив на планшет */
 @media (max-width: 1230px) {
   .centerContainer {
@@ -1540,6 +1626,12 @@ input[type=number]::-webkit-outer-spin-button {
     color: #fff;
     border: none;
   }
+  /* Адаптив страницы - Контакты */
+  .contacts {
+    margin-left: 10vw;
+    width: 80vw;
+    padding-bottom: 80px;
+  }
   /* Адаптив подписки */
   .subscribe {
     margin-top: 16vw;
@@ -1674,6 +1766,15 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .footer__additionInfo {
     margin-left: 12.3vw;
+  }
+  .notFound {
+    flex-direction: column-reverse;
+  }
+  .notFound__buttonBackMain {
+    font-size: 1rem;
+  }
+  .notFound__image {
+    min-width: 200px;
   }
 }
 /* Дополнительно на контент слайдера */

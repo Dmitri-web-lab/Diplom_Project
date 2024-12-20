@@ -2,7 +2,8 @@ const rootStyle = document.querySelector(':root');
 const navMenuBtnClose = document.querySelector('.head__nav-menu_btnClose');
 const headNavMenu = document.querySelector('.head__nav-menu');
 const navMenuLiningAdaptive = document.querySelector('.head__nav-menu_menuLiningAdaptive');
-
+let email = 'example@gmail.com'; // Проверочный email характеризующий пользователя
+let addFavouritesProduct = "favourites"; // Ключ для избранных товаров
 
 function openBurgerMenu() {
 	headNavMenu.style.display = `flex`;
@@ -79,3 +80,26 @@ let testPosition;
 }
 
 navMenuBtnClose.addEventListener('click', openBurgerMenu);
+
+function convertGetLocalStorage(key) { // Функция для преобразования полученных данных из localStorage в объект
+	let getOrdersArray = localStorage.getItem(key);
+	let parseOrders = JSON.parse(getOrdersArray);
+	return parseOrders;
+}
+
+function convertSetLocalStorage(key, data) { // Функция для преобразования объекта в строку для записи в localStorage
+	let strokeArrayOrders = JSON.stringify(data);
+	localStorage.setItem(key, strokeArrayOrders);
+}
+
+// Количество товара в корзине
+function calculationQuantityProductBasket() {
+	if (convertGetLocalStorage(email)) {
+		let parseOrders = convertGetLocalStorage(email);
+		document.querySelector('.head__userFunctions_countBuy').textContent = `${parseOrders.length}`;
+	} else {
+		document.querySelector('.head__userFunctions_countBuy').textContent = '0';
+
+	}
+}
+calculationQuantityProductBasket(); 
